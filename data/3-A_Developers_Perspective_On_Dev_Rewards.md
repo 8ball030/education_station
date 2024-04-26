@@ -1,14 +1,14 @@
 ---
 date: 04-26-24
 id: 3
-modified_at: 04/26/24 15:34
+modified_at: 04/26/24 15:39
 path: ''
 tags: []
 title: A Developers Perspective On Dev Rewards
 type: note
 ---
 
-Intro
+# Intro
 
 1,204,075.95
 
@@ -115,7 +115,7 @@ With so many views there were a few interesting commenters including this one;
 
 Life unfortunately took me away from the the space for a couple of months. 
 
-David M, David G and Oak had founded Valory and started to work on something even more ambitious than just a framework for 1 agent. 
+When I came back, David M, David G and Oak had founded Valory and started to work on something even more ambitious than just a framework for 1 agent. 
 
 They were going to build a framework for running all the agents. The were going to build Olas. Did I want in? 
 
@@ -171,7 +171,7 @@ My work has inspired people to commit their time, effort and attention to the pr
 I can say with utmost certainty, without my building Olas would have had way less attention.
 
 
-# My intentions
+# My Intentions
 
 Firstly, after all these years the market has finally understood how important and revolutionary the concept of agentic development is. I have an unprecedented head start in an emerging industry that is at the beginnings of an exponential increase in adoption thanks to Openai.
 
