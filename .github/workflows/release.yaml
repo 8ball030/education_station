@@ -1,0 +1,24 @@
+name: Deployments
+on:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  post-to-medium:
+    name: Post to Medium
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Create Medium Post
+        uses: philips-software/post-to-medium-action@v0.6.0
+        with:
+          integration_token: "${{ secrets.INTEGRATION_TOKEN }}"
+          file: "data/3-A_Developers_Perspective_On_Dev_Rewards.md"
+          content_format: "markdown"
+          notify_followers: "false"
+          tags: "olas,ai,web3,python,dev"
+          title: "A Developers Perspective on Olas Dev Rewards"
+          license: "all-rights-reserved"
+          publish_status: "draft"
