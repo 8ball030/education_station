@@ -1,7 +1,7 @@
 ---
 date: 04-26-24
 id: 3
-modified_at: 04/26/24 15:00
+modified_at: 04/26/24 15:22
 path: ''
 tags: []
 title: A Developers Perspective On Dev Rewards
@@ -77,7 +77,7 @@ But I had no team! So i went on the discord and found rebecca.johnson@datarella.
 
 Of course, we won that as well!
 
-
+![](/images/image-4.png)
 
 (David Minarsch on the left and me pitching, Phil from Creaor Bid on the right)
 
@@ -135,7 +135,14 @@ I ramped up my hackathon attendance, at every hackathon talking about the protoc
 
 Almost every hack I was able to reuse stuff I'd already built, building cooler and cooler stuff.
 
-Hacks and NFTs
+# Hacks and NFTs
+
+Hackathons are one of my favourite things to do. You get to go and build crazy stuff for a weekend and really push the limits of what you can do.
+
+If you do well, you get a prize, if not you have a great holiday with yuor friends and come away having learnt something new.
+
+Eth Zurich -> Where we built the Liquidation Station a service to democratise liquidations on on markets.
+
 
 Eth Prague where we built the plantation station and won a grand prize. The plantation station uses the framework to tend a plant and paints a picture of a world where our plants are monitored, managed and tracked by a global open source ai.
 
@@ -146,29 +153,21 @@ Eth AMS All Stars Track. A Multi agent system controlling a vault for decentrali
 https://youtu.be/DM5HVyyVkXA?t=1958
 
 
-
 What I love about Olas is the ability to build on what I have already built.
 
 Eth NYC where we built the innovation station, an agent service to make more agent components
 https://ethglobal.com/showcase/innovation-st-44d4v
 
 
-
-Eth online where we built the faucetation station, a decentralised liquidation service to democratise liquidation in money markets.
-
-
-
+Eth Online where we built the faucetation station, a decentralised liquidation service to democratise liquidation in money markets.
 
 Eth Denver where we built the speculation station. Which used an EEG device to allow your agent to read your thoughts and instantly buy or sell shitcoins.
-
-
-
 
 My work has inspired people to commit their time, effort and attention to the protocol as it was being built. Its been used by others to bring attention to the project and to highlight the potential. Because of me, some of the best developers in the space have had eyes on our code.
 I can say with utmost certainty, without my building Olas would have had way less attention.
 
 
-My intentions
+# My intentions
 
 Firstly, after all these years the market has finally understood how important and revolutionary the concept of agentic development is. I have an unprecedented head start in an emerging industry that is at the beginnings of an exponential increase in adoption thanks to Openai.
 
@@ -218,7 +217,7 @@ I am trying to make the best possible tooling for myself and those that come aft
 
 Will I ever sell any Olas?
 
--> Yes. I will be looking to sell some OLAS over the next year or so, however this will not be a market sale, but rather a uniswap v3 position where I can collect sustainable trading fees. It will be a proprtionally insignficant amount.
+-> Yes. I will be looking to sell some OLAS over the next year or so, however this will not be a market sale, but rather a uniswap v3 position where I can collect sustainable trading fees. It will be a proprtionally insignficant amount. I will be surprised if anyone even notices.
 
 To run a business and to pay the best developers in the world, you need funds.
 
