@@ -1,7 +1,7 @@
 ---
 date: 04-26-24
 id: 3
-modified_at: 04/26/24 15:22
+modified_at: 04/26/24 15:34
 path: ''
 tags: []
 title: A Developers Perspective On Dev Rewards
@@ -109,11 +109,15 @@ We posted about it on Twitter and it got a lot of traction.
 
 20-30 thousand views. I had never seen so many likes on my socials before.
 
-With so many views there were a few interesting commenters, including an invite to a discord where David Minarsch and Oak were hanging out.
+With so many views there were a few interesting commenters including this one;
 
-David M, David G and Oak had founded Valory and started to work on something even more ambitious than just a framework for 1 agent. 
+![](/images/image-5.png)
 
-They were going to build a framework for running all the agents. The were going to build Olas. Did I want in? 
+Life unfortunately took me away from the the space for a couple of months. 
+
+David M, David G and Oak had founded Valory and started to work on something even more ambitious than just a framework for 1 agent. 
+
+They were going to build a framework for running all the agents. The were going to build Olas. Did I want in? 
 
 Hell yes I did.
 
