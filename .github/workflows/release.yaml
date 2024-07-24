@@ -27,7 +27,7 @@ jobs:
         uses: philips-software/post-to-medium-action@v0.6.0
         with:
           integration_token: "${{ secrets.INTEGRATION_TOKEN }}"
-          file: "data/3-A_Developers_Perspective_On_Dev_Rewards.md"
+          file: "data/7-Dev_Rewards_Anlaysis_Teaser.md"
           content_format: "markdown"
           notify_followers: "false"
           tags: "olas,ai,web3,python,dev"
