@@ -9,171 +9,149 @@ title: Huh? NoTE
 type: note
 ---
 
-# Does this Work?
-
-I am not sure it does....
-
 # Intro to Bash
 
 ## Summary
 
-**Chapter 1:** From Command-Line to Bash Script
- - Structure and functionality of Bash scripts
- - Integration with command-line programs
- - Data streams: STDIN, STDERR, and STDOUT
- - ARGV (argument array) and its properties:
-    - Accessing arguments using $1, $2, etc.
-    - Using $@ to return all elements
+### Chapter 1: From Command-Line to Bash Script**
 
-**Chapter 2:** Variables in Bash Scripting
- - Creating and using different variable types:
-    - String variables
-    - Numerical variables
-    - Array variables
- - Arithmetic operations using expr and bc
- - Importance of quotation marks:
-    - Single quotes
-    - Double quotes
-    - Backticks
- - Shell-within-a-shell concept for capturing command outputs
+- Structure and functionality of Bash scripts
+- Integration with command-line programs
+- Data streams: `STDIN`, `STDERR`, and `STDOUT`
+- ARGV (argument array) and its properties:
+  - Accessing arguments using `$1`, `$2`, etc.
+  - Using `$@` to return all elements
 
-**Chapters 3:** Control Statements in Bash Scripting
- - Control structures:
-    - FOR loops
-    - WHILE loops
-    - CASE statements
-    - IF statements
- 
-**Chapters 4:** Functions and Automation
- - Functions:
-    - Creating modular functions
-    - Passing data in and out of functions
- - Automation:
-    - Scheduling scripts using cron
+### Chapter 2: Variables in Bash Scripting
+
+- Creating and using different variable types:
+  - String variables
+  - Numerical variables
+  - Array variables
+- Arithmetic operations using expr and bc
+- Importance of quotation marks:
+  - Single quotes
+  - Double quotes
+  - Backticks
+- Shell-within-a-shell concept for capturing command outputs
+
+### Chapters 3: Control Statements in Bash Scripting
+
+- Control structures:
+  - `FOR` loops
+  - `WHILE` loops
+  - `CASE` statements
+  - `IF` statements
+
+### Chapters 4: Functions and Automation
+
+- Functions:
+  - Creating modular functions
+  - Passing data in and out of functions
+- Automation:
+  - Scheduling scripts using cron
 
 Progressing from basic Bash concepts to more advanced topics, enabling learners to create, control, and automate complex scripts for various purposes.
 
-
 ## 1. From Command-Line to Bash Script
+
 ### 1.1 Introduction
-**Course Overview**
- - Moving from single commands to full scripts
- - Variables and data types in Bash
- - Control structures (if-statements, for-loops)
- - Functions and cron job scheduling
 
-**Bash Overview**
- - Stands for "Bourne Again Shell"
- - Developed in the 1980s
- - Popular default shell for Unix and Mac systems
- - Important for servers, ML models, data pipelines
- - Used in cloud company CLIs
+#### Course Overview
 
-**Benefits of Scripting**
- - Execute multiple commands with a single command
- - Access to programming constructs
+- Moving from single commands to full scripts
+- Variables and data types in Bash
+- Control structures (if-statements, for-loops)
+- Functions and cron job scheduling
 
-**Regex Importance**
- - Crucial for pattern matching in Bash scripting
- - Practice using sites like <http://regex101.com>
+#### Bash Overview
 
-**Shell practice**
+- Stands for "Bourne Again Shell"
+- Developed in the 1980s
+- Popular default shell for Unix and Mac systems
+- Important for servers, ML models, data pipelines
+- Used in cloud company CLIs
 
-Text file `fruits.txt` contains 3 lines of data:
+#### Benefits of Scripting
 
-`banana`
+- Execute multiple commands with a single command
+- Access to programming constructs
 
-`apple`
+#### Regex Importance
 
-`carrot`
-
-`grep 'a' fruit.txt` *# returns elements that contain 'a' (ALL)*
-
-`grep 'p' fruit.txt` *# returns elements that contain 'p' (apple)*
-
-`grep '[pc]' fruit.txt` *# returns elements that contain 'p' OR 'c'(apple & carrot)*
-
-`sort | uniq -c` *# **1st** sort alphabetically, **2nd** count*
-
-### Task 1.1a: Extracting specific data with shell (*bash*)
-
-`ls start_dir/*/FILE_NAME.type` *# find the correct directory containing the specified file*
-
-`cd start_dir/SPECIFIED_DIR` *# access the correct directory*
-
-`cat FILE_NAME.type | grep "^1944,"`  *# **1st** concatenate, **2nd** return element for 1944*
-
-### Task 1.1b: Searching a text with shell (*bash*)
-
-`cat ~/TEXT.txt | grep -E "NAME_1|NAME_2" | wc -l`
-
-*# **1st** view file contents, **2nd** return elements containing named people [-E: flag for extended regular expressions syntax], **3rd** word count (lines)*
+- Crucial for pattern matching in Bash scripting
+- Practice using sites like <http://regex101.com>
 
 ### 1.2 Your First Bash Script
-Bash Script Anatomy
-First line: Shebang (#!) + path to Bash (e.g., #!/usr/bin/bash)
-Check Bash location: type which bash to check
-Middle: Contains code (simple commands or advanced scripts)
-Saving and Running Scripts
-File extension: Usually .sh (convention, not required)
-Run methods:
-bash script_name.sh
-./script_name.sh (if shebang is present)
-Basic Script Example
-bash
 
+Bash Script Anatomy
+
+- First line: Shebang (`#!`) + path to Bash (e.g., `#!/usr/bin/bash`)
+- Check Bash location using `which bash`
+- Middle contains code *(simple commands or advanced scripts)*
+
+Basic Script Example
+
+```bash
 #!/usr/bash
 echo "Hello World"
-echo "Goodbye cruel World"
-Run: ./eg.sh Output:
+echo "Goodbye Cruel World"
+```
 
-Hello World
-Goodbye cruel World
-Using Shell Commands in Scripts
-Each line can be a shell command
-Pipes can chain commands
-Practical Example
-animals.txt contains:
+#### 1.2a Creating a simple text file
 
-magpie, bird
-kangaroo, marsupial
-shark, fish
-emu, bird
-wallaby, marsupial
-To count the number of animals in each group:
-bash
+1. Create a text file containing five different components categorised by type
 
-#!/usr/bash 
-cat animals.txt | 
-cut -d " " -f 2 | 
-sort | 
-uniq -c
-After saving the script as group.sh, run using bash group.sh Returns: 2 bird, 1 fish, 2 marsupial
-Task 1.2a: A simple Bash script
-To confirm environment location, use which bash cat server_log_with_todays_date.txt
-Task 1.2b: Shell pipelines to Bash scripts
-bash
+```bash
+echo "prometheus, skill" > components.txt
+echo "websockets, protocol" >> components.txt
+echo "chained_collateralisation, skill" >> components.txt
+echo "fipa, protocol" >> components.txt
+echo "apprise, connection" >> components.txt
+```
 
-cat soccer_scores.csv | 
-cut -d "," -f 2 | 
-tail -n +2 | 
-sort | 
-uniq -c
-Task 1.2c: Extract and edit using Bash scripts
-bash
+#### Task 1.2b A simple Bash script
 
-cat soccer_scores.csv | 
-sed 's/Cherno/Cherno City/g' | 
-sed 's/Arda/Arda United/g' 
-> soccer_scores_edited.csv
-1.3 Standard Streams and Arguments
+1. Confirm environment location using `which bash`
+2. Display the contents of `components.txt` using `cat`
+
+```bash
+which bash
+cat components.txt
+```
+
+Each line in a script can be a shell command, pipes can chain commands
+
+#### Task 1.2c Shell pipelines to Bash scripts
+
+1. Display file contents sorted alphabetically
+
+```bash
+cat components.txt | sort
+```
+
+#### Task 1.2c Extract and edit using Bash scripts
+
+1. Replace component `s` with `g` using `sed`
+2. Save as new 'components_edited' file
+
+```bash
+cat components.txt | sed 's/chained_collateralisation/faucet/g' | sed 's/apprise, connection/erc_20, contract/g' > components_edited.txt
+```
+
+### 1.3 Standard Streams and Arguments
+
 Standard Streams
-Standard Input (STDIN): Data going into the program
-Standard Output (STDOUT): Data coming out of the program
-Standard Error (STDERR): Where errors and exceptions are written
+
+- Standard Input (STDIN): Data going into the program
+- Standard Output (STDOUT): Data coming out of the program
+- Standard Error (STDERR): Where errors and exceptions are written
+
 Redirecting Streams
-STDERR can be redirected (e.g., to /dev/null for deletion)
-STDOUT can be redirected using 1>
+
+- STDERR can be redirected (e.g., to /dev/null for deletion)
+- STDOUT can be redirected using 1>
+
 Pipe Chain Visualisation
 Output of one program becomes input for the next
 Errors by default display in the terminal
@@ -967,3 +945,52 @@ Add the following line:
 
 Save and exit the editor.
 This will run the script every 15 minutes (*/15) from 9 AM to 5 PM (9-17) on weekdays (1-5).
+
+
+#### FOR LATER INTEGRATION**
+
+Text file `fruits.txt` contains 3 lines of data:
+
+```bash
+echo "banana" > fruit.txt
+echo "apple" >> fruit.txt
+echo "carrot" >>  fruit.txt
+
+grep 'a' fruit.txt # returns elements that contain 'a' (ALL)
+
+grep 'p' fruit.txt # returns elements that contain 'p' (apple)
+
+grep '[pc]' fruit.txt # returns elements that contain 'p' OR 'c'(apple & carrot)*
+
+sort | uniq -c # 1st sort alphabetically, 2nd count
+```
+
+### Task 1.1a: Extracting specific data with shell
+
+```bash
+ls start_dir/*/FILE_NAME.type # find the correct directory containing the specified file
+
+cd start_dir/SPECIFIED_DIR # access the correct directory for the specified file
+
+cat FILE_NAME.type | grep "^VALUE,"  # 1st concatenate, 2nd return element for specified value
+```
+
+### Task 1.1b: Searching a text with shell
+
+```bash
+cat ~/TEXT.txt | grep -E "NAME_1|NAME_2" | wc -l
+# 1st view file contents, 2nd return elements containing named people [-E: flag for extended regular expressions syntax], 3rd word count (lines)
+```
+
+### Saving and Running Scripts
+
+- File extension: Usually `.sh` *(convention, not required)*
+- Run methods:
+  - `bash script_name.sh`
+  - `./script_name.sh` *(if shebang is present)*
+
+  Count the number of each type of component
+```bash
+cat components.txt | cut -d " " -f 2 | sort | uniq -c
+# 1st display file contents, 2nd split at delimiter " " and select the second field (component type), 3rd sort alphabetically, 4th count occurrences of each
+```
