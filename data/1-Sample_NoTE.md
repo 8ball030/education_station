@@ -13,51 +13,103 @@ type: note
 
 I am not sure it does....
 
-Intro to Bash
+# Intro to Bash
 
-1. From Command-Line to Bash Script
-1.1 Introduction
-Course Overview
-Moving from single commands to full scripts
-Variables and data types in Bash
-Control structures (if-statements, for-loops)
-Functions and cron job scheduling
-Bash Overview
-Stands for "Bourne Again Shell"
-Developed in the 1980s
-Popular default shell for Unix and Mac systems
-Important for servers, ML models, data pipelines
-Used in cloud company CLIs
-Benefits of Scripting
-Execute multiple commands with a single command
-Access to programming constructs
-Regex Importance
-Crucial for pattern matching in Bash scripting
-Practice using sites like regex101.com
-Shell practice
-Text file fruits.txt contains 3 lines of data:
+## Summary
 
-banana
-apple
-carrot
-grep 'a' fruit.txt: returns elements that contain 'a' (ALL)
-grep 'p' fruit.txt: returns elements that contain 'p' (apple)
-grep '[pc]' fruit.txt: returns elements that contain 'p' OR 'c' (apple & carrot)
-sort | uniq -c: 1. sort alphabetically, 2. count
-Task 1.1a: Extracting scores with shell
-bash
+**Chapter 1:** From Command-Line to Bash Script
+ - Structure and functionality of Bash scripts
+ - Integration with command-line programs
+ - Data streams: STDIN, STDERR, and STDOUT
+ - ARGV (argument array) and its properties:
+    - Accessing arguments using $1, $2, etc.
+    - Using $@ to return all elements
 
-ls start_dir/*/soccer_scores.csv  # find the correct directory containing the file
-cd start_dir/second_dir  # access the correct directory
-cat start_dir/*/soccer_scores.csv | grep "^1959,"  # 1. concatenate, 2. return element for 1959
-Task 1.1b: Searching a book with shell
-bash
+**Chapter 2:** Variables in Bash Scripting
+ - Creating and using different variable types:
+    - String variables
+    - Numerical variables
+    - Array variables
+ - Arithmetic operations using expr and bc
+ - Importance of quotation marks:
+    - Single quotes
+    - Double quotes
+    - Backticks
+ - Shell-within-a-shell concept for capturing command outputs
 
-cat ~/two_cities.txt | 
-grep -E "Sydney Carton|Charles Darnay" | 
-wc -l
--E: flag for extended regular expressions syntax
-1.2 Your First Bash Script
+**Chapters 3:** Control Statements in Bash Scripting
+ - Control structures:
+    - FOR loops
+    - WHILE loops
+    - CASE statements
+    - IF statements
+ 
+**Chapters 4:** Functions and Automation
+ - Functions:
+    - Creating modular functions
+    - Passing data in and out of functions
+ - Automation:
+    - Scheduling scripts using cron
+
+Progressing from basic Bash concepts to more advanced topics, enabling learners to create, control, and automate complex scripts for various purposes.
+
+
+## 1. From Command-Line to Bash Script
+### 1.1 Introduction
+**Course Overview**
+ - Moving from single commands to full scripts
+ - Variables and data types in Bash
+ - Control structures (if-statements, for-loops)
+ - Functions and cron job scheduling
+
+**Bash Overview**
+ - Stands for "Bourne Again Shell"
+ - Developed in the 1980s
+ - Popular default shell for Unix and Mac systems
+ - Important for servers, ML models, data pipelines
+ - Used in cloud company CLIs
+
+**Benefits of Scripting**
+ - Execute multiple commands with a single command
+ - Access to programming constructs
+
+**Regex Importance**
+ - Crucial for pattern matching in Bash scripting
+ - Practice using sites like <http://regex101.com>
+
+**Shell practice**
+
+Text file `fruits.txt` contains 3 lines of data:
+
+`banana`
+
+`apple`
+
+`carrot`
+
+`grep 'a' fruit.txt` *# returns elements that contain 'a' (ALL)*
+
+`grep 'p' fruit.txt` *# returns elements that contain 'p' (apple)*
+
+`grep '[pc]' fruit.txt` *# returns elements that contain 'p' OR 'c'(apple & carrot)*
+
+`sort | uniq -c` *# **1st** sort alphabetically, **2nd** count*
+
+### Task 1.1a: Extracting specific data with shell (*bash*)
+
+`ls start_dir/*/FILE_NAME.type` *# find the correct directory containing the specified file*
+
+`cd start_dir/SPECIFIED_DIR` *# access the correct directory*
+
+`cat FILE_NAME.type | grep "^1944,"`  *# **1st** concatenate, **2nd** return element for 1944*
+
+### Task 1.1b: Searching a text with shell (*bash*)
+
+`cat ~/TEXT.txt | grep -E "NAME_1|NAME_2" | wc -l`
+
+*# **1st** view file contents, **2nd** return elements containing named people [-E: flag for extended regular expressions syntax], **3rd** word count (lines)*
+
+### 1.2 Your First Bash Script
 Bash Script Anatomy
 First line: Shebang (#!) + path to Bash (e.g., #!/usr/bin/bash)
 Check Bash location: type which bash to check
